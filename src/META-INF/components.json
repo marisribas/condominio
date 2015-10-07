@@ -1,0 +1,524 @@
+{
+  "name": "cronos-components",
+  "version": "1.0.0",
+  "components": [
+    {
+      "name": "crn-anchor",
+      "text": "Link",
+      "class": "cpn cpn-anchor",
+      "templateURL": "webcontent/components/templates/anchor.template.html",
+      "properties": {
+        "onclick": {
+          "type": "event"
+        },
+        "target": {
+          "removable": false,
+          "type": "list",
+          "options": [
+            {
+              "key": "_blank",
+              "value": "Nova janela"
+            },
+            {
+              "key": "_self",
+              "value": "Mesma janela"
+            },
+            {
+              "key": "_parent",
+              "value": "Janela pai"
+            },
+            {
+              "key": "_top",
+              "value": "Top"
+            }
+          ]
+        },
+        "href": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "text/html"
+        }
+      }
+    },
+    {
+      "name": "crn-button",
+      "text": "Button",
+      "class": "cpn cpn-button",
+      "templateURL": "webcontent/components/templates/button.template.html",
+      "properties": {
+        "ng-click": {
+          "removable": true,
+          "type": "event"
+        },
+        "onmouseover": {
+          "removable": true,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "name": "crn-datasource",
+      "text": "Datasource",
+      "class": "cpn cpn-datasource",
+      "template": "<datasource name=\"\" entity=\"\" keys=\"\" rows-per-page=\"100\"><i class=\"cpn cpn-datasource\"></i></datasource>",
+      "properties": {
+        "entity": {
+          "removable": false,
+          "type": "datasourceList"
+        },
+        "keys": {
+          "removable": false,
+          "type": "datasourceKeys"
+        }
+      }
+    },
+    {
+      "name": "crn-textinput",
+      "text": "Caixa de texto",
+      "class": "cpn cpn-textinput",
+      "templateURL": "webcontent/components/templates/textinput.template.html",
+      "properties": {
+        "onchange": {
+          "removable": true,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "name": "crn-image",
+      "text": "Image",
+      "class": "cpn cpn-image",
+      "template": "<img src=\"http://placehold.it/50x50\" class=\"\" width=\"50\" height=\"50\" />",
+      "properties": {
+        "src": {
+          "removable": false,
+          "type": "projectResource",
+          "resourceType": "image/jpeg,image/gif,image/png"
+        },
+        "onclick": {
+          "removable": true,
+          "type": "event"
+        }
+      }
+    },
+    {
+      "name": "crn-vertical-container",
+      "text": "Vertical Grid",
+      "class": "cpn cpn-vertical-grid",
+      "template": "<div class=\"crn-layout-container\"><div class=\"row\"><div class=\"\"><div data-container=\"true\">Content goes here</div></div></div><div class=\"row\"><div class=\"\"><div data-container=\"true\">Content goes here</div></div></div></div>",
+      "handleRules": {
+        "canOrder": false,
+        "canActivate": false,
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<div class=\"row\"><div class=\"\"><div data-container=\"true\">Content goes here</div></div></div>",
+            "targetSelector": "div.crn-layout-container"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-horizontal-container",
+      "text": "Horizontal Grid",
+      "class": "cpn cpn-horizontal-grid",
+      "template": "<div class=\"row\">\r\n        <div class=\"column col-md-4\"><div data-container=\"true\">Content goes here</div></div>\r\n        <div class=\"column col-md-4\"><div data-container=\"true\">Content goes here</div></div>\r\n      </div>",
+      "handleRules": {
+        "canOrder": false,
+        "canActivate": false,
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<div class=\"column col-md-4\"><div data-container=\"true\">.col-md-4</div></div>",
+            "targetSelector": "div.row"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-form",
+      "text": "Form",
+      "class": "cpn cpn-form",
+      "templateURL": "webcontent/components/templates/form.template.html",
+      "properties": {
+        "crn-datasource": {
+          "displayName": "Datasource",
+          "removable": false,
+          "type": "pageDatasource"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "form",
+          "displayName": "datasource"
+        }
+      ]
+    },
+    {
+      "name": "crn-tabs",
+      "text": "Tabs",
+      "class": "cpn cpn-tabs",
+      "handleRules": {
+        "canOrder": true,
+        "canActivate": true,
+        "canIncrement": true,
+        "rules": [
+          {
+            "activeSelector": "ul.nav-tabs li.active",
+            "activeClass": "active",
+            "sourceHTML": "<li role=\"presentation\"><a data-target=\"#tab${RANDOM}\" role=\"tab\" data-toggle=\"tab\">New Tab</a></li>",
+            "targetSelector": "ul.nav-tabs"
+          },
+          {
+            "activeSelector": "div.tab-content .tab-pane.active",
+            "activeClass": "active",
+            "sourceHTML": "<div role=\"tabpanel\" class=\"tab-pane\" id=\"tab${RANDOM}\"><div class=\"\" data-container=\"true\"></div>",
+            "targetSelector": "div.tab-content"
+          }
+        ]
+      },
+      "templateURL": "webcontent/components/templates/tabs.template.html"
+    },
+    {
+      "name": "crn-datepicker",
+      "text": "Date",
+      "class": "cpn cpn-datepicker",
+      "templateURL": "webcontent/components/templates/datepicker.template.html"
+    },
+    {
+      "name": "crn-upload",
+      "text": "File Upload",
+      "class": "cpn cpn-upload",
+      "templateURL": "webcontent/components/templates/fileupload.template.html",
+      "properties": {}
+    },
+    {
+      "name": "crn-grid",
+      "text": "Table",
+      "class": "cpn cpn-table",
+      "templateURL": "webcontent/components/templates/grid.template.html",
+      "properties": {},
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "div[crn-datasource]",
+          "displayName": "datasource"
+       }
+       ],
+      "handleRules": {
+        "canOrder": true,
+        "canActivate": true,
+        "canIncrement": true,
+        "rules": [
+          {
+            "activeSelector": ".table-header th.active",
+            "activeClass": "active",
+            "sourceHTML": "<th><div data-container=\"true\">New Title</div></th>",
+            "targetSelector": ".table-header"
+          },
+          {
+            "activeSelector": ".table-content td.active",
+            "activeClass": "active",
+            "sourceHTML": "<td><div data-container=\"true\">New Content</div></td>",
+            "targetSelector": ".table-content"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-combobox",
+      "text": "Combobox",
+      "class": "cpn cpn-combobox",
+      "templateURL": "webcontent/components/templates/combobox.template.html",
+      "handleRules": {
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": "ui-select-choices",
+            "toggleClass": "invisible"
+          }
+        ]
+      },
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "ui-select",
+          "displayName": "items"
+        },
+        {
+          "name": "ng-model",
+          "selector": "ui-select",
+          "displayName": "ng-model"
+        },
+        {
+          "name": "repeat",
+          "selector": "ui-select-choices",
+          "displayName": "repeat"
+        }
+      ]
+    },
+    {
+      "name": "crn-combobox-dynamic",
+      "text": "Dynamic Combobox",
+      "class": "cpn cpn-combobox-dynamic",
+      "templateURL": "webcontent/components/templates/combobox-dynamic.template.html",
+      "handleRules": {
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": "ui-select-choices",
+            "toggleClass": "invisible"
+          }
+        ]
+      },
+      "properties": {
+        "crn-datasource": {
+          "displayName": "Datasource",
+          "removable": false,
+          "type": "pageDatasource"
+        }
+      },
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "ui-select",
+          "displayName": "datasource"
+        },
+        {
+          "name": "ng-model",
+          "selector": "ui-select",
+          "displayName": "ng-model"
+        },
+        {
+          "name": "repeat",
+          "selector": "ui-select-choices",
+          "displayName": "repeat"
+        }
+      ]
+    },
+    {
+      "name": "crn-radiogroup",
+      "text": "Radio Group",
+      "class": "cpn cpn-radiogroup",
+      "templateURL": "webcontent/components/templates/radiogroup.template.html",
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<div class=\"radio\">\n  <label class=\"\" crn-value value=\"Value Two\"> \n       <input type=\"radio\" name=\"optionsRadios\" id=\"optionsRadios${RANDOM}\" value=\"\"> \n       <span class=\"\">New option</span> \n </label> \n</div>",
+            "targetSelector": ".form-group"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-checkbox",
+      "text": "Checkbox",
+      "class": "cpn cpn-checkbox",
+      "templateURL": "webcontent/components/templates/checkbox.template.html"
+    },    
+    {
+      "name": "crn-navbar",
+      "text": "Navbar",
+      "class": "cpn cpn-navbar",
+      "templateURL": "webcontent/components/templates/navbar.template.html",
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<li class=\"dropdown component-holder\" data-component=\"crn-menu-item\">                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>                <ul class=\"dropdown-menu\">                  <li><a href=\"#\">Action</a></li>                </ul>              </li>",
+            "targetSelector": ".nav.navbar-nav"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-menu-item",
+      "text": "MenuItem",
+      "class": "cpn cpn-navbar",
+      "template": "",
+      "pallete" : false,
+      "handleRules": {
+        "canToggle": true,
+        "canIncrement": true,
+        "rules": [
+          {
+            "toggleSelector": ".dropdown",
+            "toggleClass": "open",
+            "sourceHTML": "<li><a href=\"#\" class=\"component-holder\" data-component=\"crn-anchor\">Action item</a></li>",
+            "targetSelector": "ul.dropdown-menu"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-sidebar",
+      "text": "Sidebar",
+      "class": "cpn cpn-sidebar",
+      "templateURL": "webcontent/components/templates/sidebar.template.html",
+      "handleRules": {
+        "canIncrement": true,
+        "rules": [
+          {
+            "sourceHTML": "<li data-toggle=\"collapse\" data-component=\"crn-sidebar-item\" data-target=\"#menu-sub-${RANDOM}\" class=\"collapsed active component-holder\"><a href=\"javascript:void(0);\" class=\"\"><i class=\"fa fa-users fa-lg\"></i> <span>Menu Item</span> <span class=\"arrow\"></span></a> <ul class=\"sub-menu collapse  navbar-nav in\" id=\"menu-sub-${RANDOM}\"> <li><a href=\"/#/\" class=\"component-holder\" data-component=\"crn-anchor\">Submenu Item</a></li>  </ul> </li> ",
+            "targetSelector": ".menu-content"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-sidebar-item",
+      "text": "MenuItem",
+      "class": "cpn cpn-sidebar",
+      "template": "",
+      "pallete" : false,
+      "handleRules": {
+        "canIncrement": true,
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": ".sub-menu.collapse",
+            "toggleClass": "in",
+            "sourceHTML": "<li><a href=\"/#/\" class=\"component-holder\" data-component=\"crn-anchor\">Submenu Item</a></li>",
+            "targetSelector": ".sub-menu"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-chart-bar",
+      "text": "Chart Bar",
+      "class": "cpn cpn-chart-bar",
+      "templateURL": "webcontent/components/templates/chart-bar.template.html"
+    },
+    {
+      "name": "crn-chart-doughnut",
+      "text": "Chart Doughnut",
+      "class": "cpn cpn-chart-doughnut",
+      "templateURL": "webcontent/components/templates/chart-doughnut.template.html"
+    },
+    {
+      "name": "crn-chart-line",
+      "text": "Chart Line",
+      "class": "cpn cpn-chart-line",
+      "templateURL": "webcontent/components/templates/chart-line.template.html"
+    },
+    {
+      "name": "crn-chart-pie",
+      "text": "Chart Pie",
+      "class": "cpn cpn-chart-pie",
+      "templateURL": "webcontent/components/templates/chart-pie.template.html"
+    },
+    {
+      "name": "crn-chart-polar-area",
+      "text": "Chart Polar Area",
+      "class": "cpn cpn-chart-polar-area",
+      "templateURL": "webcontent/components/templates/chart-polar-area.template.html"
+    },
+    {
+      "name": "crn-chart-radar",
+      "text": "Chart Radar",
+      "class": "cpn cpn-chart-radar",
+      "templateURL": "webcontent/components/templates/chart-radar.template.html"
+    },
+    {
+      "name": "crn-chart-gauge",
+      "text": "Chart Gauge",
+      "class": "cpn cpn-chart-gauge",
+      "templateURL": "webcontent/components/templates/chart-gauge.template.html"
+    },
+    {
+      "name": "crn-title",
+      "text": "Título",
+      "class": "cpn cpn-title",
+      "templateURL": "webcontent/components/templates/title.template.html"
+    },
+    {
+      "name": "crn-text",
+      "text": "Texto",
+      "class": "cpn cpn-text",
+      "templateURL": "webcontent/components/templates/text.template.html"
+    },
+    {
+      "name": "crn-treeview",
+      "text": "Treeview",
+      "class": "cpn cpn-treeview",
+      "templateURL": "webcontent/components/templates/treeview.template.html",
+      "handleRules": {
+        "canIncrement": true,
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": "ol, ul",
+            "toggleClass": "active",
+            "sourceHTML": "<li class=\"component-holder\" data-component=\"crn-tree-item\"> <label for=\"folder${RANDOM}\">Folder</label> <input type=\"checkbox\" id=\"folder${RANDOM}\"><ol><li><a href=\"\"><i class=\"fa fa-file-o\"></i> <span>Item</span></a></li></ol></li>",
+            "targetSelector": "ol, ul",
+            "recursive": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-tree-item",
+      "text": "TreeItem",
+      "class": "cpn cpn-treeview",
+      "template": "",
+      "pallete" : false,
+      "handleRules": {
+        "canIncrement": true,
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": "ol",
+            "toggleClass": "active",
+            "sourceHTML": "<li class=\"component-holder\" data-component=\"crn-tree-item\"><a href=\"\"><i class=\"fa fa-file-o\"></i> <span>Item</span></a></li>",
+            "targetSelector": "ul, ol",
+            "recursive": true,
+            "transformTo": "<li class=\"component-holder\" data-component=\"crn-tree-item\"> <label for=\"folder${RANDOM}\">Folder</label> <input type=\"checkbox\" id=\"folder${RANDOM}\"><ol><li><a href=\"\"><i class=\"fa fa-file-o\"></i> <span>Item</span></a></li></ol></li>"
+          }
+        ]
+      }
+    },
+    {
+      "name": "crn-tags",
+      "text": "Multiselect",
+      "dependences" : {
+        "editor": ["components/css/multiselect-editor.css"]
+      },
+      "class": "cpn cpn-tags-input",
+      "templateURL": "webcontent/components/templates/multiselect.template.html",
+      "handleRules": {
+        "canIncrement": true,
+        "canToggle": true,
+        "rules": [
+          {
+            "toggleSelector": "ol",
+            "toggleClass": "active",
+            "sourceHTML": "<li class=\"component-holder\" data-component=\"crn-tree-item\"><a href=\"\"><i class=\"fa fa-file-o\"></i> <span>Item</span></a></li>",
+            "targetSelector": "ul, ol",
+            "recursive": true,
+            "transformTo": "<li class=\"component-holder\" data-component=\"crn-tree-item\"> <label for=\"folder${RANDOM}\">Folder</label> <input type=\"checkbox\" id=\"folder${RANDOM}\"><ol><li><a href=\"\"><i class=\"fa fa-file-o\"></i> <span>Item</span></a></li></ol></li>"
+          }
+        ]
+      },
+      "childrenProperties": [
+        {
+          "name": "crn-datasource",
+          "selector": "ui-select",
+          "displayName": "datasource"
+        },
+        {
+          "name": "ng-model",
+          "selector": "ui-select",
+          "displayName": "ng-model"
+        },
+        {
+          "name": "repeat",
+          "selector": "ui-select-choices",
+          "displayName": "repeat"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<h3 class="">Roles</h3> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-906854"> 
+  <datasource name="Role" entity="api/rest/security/Role" keys="id" rows-per-page="100" class=""></datasource> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-807592"> 
+  <datasource name="AllRoles" entity="api/rest/security/Role" keys="id" rows-per-page="10" class="" reach-infinity="AllRoles.next()"></datasource> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" ng-click="Role.startInserting()"><i class="fa fa-lock"></i> <span>Add new role</span></button> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-852138" ng-hide="Role.editing || Role.inserting"> 
+  <div crn-datasource="Role" class=""> 
+    <table class="table  table-bordered table-hover"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div data-container="true" class="">
+               Name 
+            </div></th> 
+          <th> 
+            <div data-container="true" class="">
+               Actions 
+            </div></th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div data-container="true" class="">
+               {{rowData.name}} 
+            </div></td> 
+          <td> 
+            <div data-container="true" class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i><span class="">Edit</span></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i> <span>Remove</span></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+    </div> 
+  </div> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-271576"> 
+  <div class="form"> 
+    <form crn-datasource="Role" ng-show="Role.editing || Role.inserting"> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+         
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-327527"> 
+          <div class="form-group"> 
+            <label for="exampleInputEmail1" class="">Name</label> 
+            <input type="text" ng-model="Role.active.name" class="form-control" id="textinput-id" placeholder="Placeholder text"> 
+          </div> 
+        </div> 
+         
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 

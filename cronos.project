@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project name="AngularFinal" encoding="UTF-8">
+    <resources>
+        <resource mimetype="folder/servercontext" folder="true" fullPath="config"/>
+        <resource mimetype="folder/libs" folder="true" fullPath="lib"/>
+        <resource mimetype="folder/src" folder="true" fullPath="src"/>
+        <resource mimetype="folder/web" folder="true" fullPath="webcontent"/>
+    </resources>
+    <references/>
+</project>

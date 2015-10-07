@@ -1,0 +1,357 @@
+<div> 
+  <div class="" data-container="true"></div> 
+  <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-tabs" id="crn-tabs-382101"> 
+    <div class="ctn-tab"> 
+      <!-- Nav tabs --> 
+      <ul class="nav nav-tabs" role="tablist"> 
+        <li role="presentation" class="active"><a data-target="#tab1" role="tab" data-toggle="tab" class="">User</a></li> 
+        <li role="presentation" class=""><a data-target="#tab2" role="tab" data-toggle="tab" class="">Roles</a></li> 
+        <li role="presentation" class=""><a data-target="#tab1962" role="tab" data-toggle="tab" class="">User Roles</a></li> 
+        <li role="presentation" class=""><a data-target="#tab3948" role="tab" data-toggle="tab" class="">Permission</a></li> 
+      </ul> 
+      <!-- Tab panes --> 
+      <div class="tab-content"> 
+        <div role="tabpanel" class="tab-pane active" id="tab1"> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-492752"> 
+            <datasource name="User" entity="/api/rest/security/User" keys="id" rows-per-page="100" endpoint="api/rest" class=""></datasource> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-470575"> 
+            <div crn-datasource=""> 
+              <table class="table  table-bordered table-hover" crn-datasource="User"> 
+                <thead> 
+                  <tr class="table-header"> 
+                    <th class=""> 
+                      <div data-container="true" class="">
+                         Picture 
+                      </div></th> 
+                    <th class=""> 
+                      <div data-container="true" class="">
+                         Name 
+                      </div></th> 
+                    <th> 
+                      <div data-container="true" class="">
+                         Login 
+                      </div></th> 
+                    <th>
+                      <div data-container="true" class="">
+                        Actions
+                      </div></th>
+                  </tr> 
+                </thead> 
+                <tbody> 
+                  <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+                    <td class=""> 
+                      <div class="" data-container="true"></div>
+                      <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-image" id="crn-image-742852">
+                        <img ng-src="{{rowData.picture || 'img/nophoto.png'}}" class="" width="36" height="36" style="border-radius: 50%;     border: 3px solid rgba(255,255,255,0.5);">
+                      </div>
+                      <div class="" data-container="true"></div></td> 
+                    <td class=""> 
+                      <div data-container="true" class="">
+                         {{rowData.name}} 
+                      </div></td> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.login}} 
+                      </div></td> 
+                    <td>
+                      <div class="" data-container="true"></div>
+                      <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-467298">
+                        <button class="btn btn-default" type="submit" onclick="User.startEditing()"><i class="glyphicon glyphicon-edit"></i></button>
+                        <button class="btn btn-default" type="submit" onclick=""><i class="glyphicon glyphicon-remove"></i></button>
+                      </div>
+                      <div class="" data-container="true"></div></td>
+                  </tr> 
+                </tbody> 
+              </table> 
+              <div class="table-footer-controls"> 
+                <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+              </div> 
+            </div> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <!-- Form --> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-7739849"> 
+            <div ng-show="vm.error" class="alert alert-danger">
+               {{vm.error}} 
+            </div> 
+            <div class="form" ng-hide="!User.editing && !User.inserting"> 
+              <form crn-datasource="User"> 
+                <div class="active-bar"> 
+                  <h2 style="text-align:right"> User </h2> 
+                  <button class="btn btn-success" ng-click="User.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+                  <button class="btn btn-danger" ng-click="User.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+                <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-3646799"> 
+                  <div class="form-group"> 
+                    <br> 
+                    <input type="text" ng-model="User.active.name" class="form-control" placeholder="Name" required=""> 
+                    <br> 
+                    <input type="text" ng-model="User.active.password" class="form-control" placeholder="Passwrod" required=""> 
+                    <br> 
+                    <input type="email" ng-model="User.active.email" class="form-control" placeholder="E-mail" required=""> 
+                  </div> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+              </form> 
+            </div> 
+          </div> 
+          <!-- Form --> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="tab2"> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-895389"> 
+            <datasource name="Role" entity="/api/rest/security/Role" keys="id" rows-per-page="100" endpoint="api/rest" class=""></datasource> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-95463"> 
+            <div crn-datasource=""> 
+              <table class="table  table-bordered table-hover" crn-datasource="Role"> 
+                <thead> 
+                  <tr class="table-header"> 
+                    <th class=""> 
+                      <div data-container="true" class="">
+                         Nome 
+                      </div></th> 
+                    <th class=""> 
+                      <div data-container="true" class="">
+                         Enabled 
+                      </div></th> 
+                  </tr> 
+                </thead> 
+                <tbody> 
+                  <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+                    <td class=""> 
+                      <div data-container="true" class="">
+                         {{rowData.name}} 
+                      </div></td> 
+                    <td> 
+                      <div class="" data-container="true"></div> 
+                      <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-checkbox" id="crn-checkbox-753834"> 
+                        <label> <input type="checkbox" ng-init="chkEnabled = true" ng-model="chkEnabled" ng-true-value="true" ng-false-value="false" class=""> <span class=""></span> </label> 
+                      </div> 
+                      <div class="" data-container="true"></div></td> 
+                  </tr> 
+                </tbody> 
+              </table> 
+              <div class="table-footer-controls"> 
+                <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+              </div> 
+            </div> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <!-- Form --> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-ROLE"> 
+            <div class="form" ng-hide="!Role.editing &amp;&amp; !Role.inserting"> 
+              <form crn-datasource="Role"> 
+                <div class="active-bar"> 
+                  <h2 style="text-align:right"> Role </h2> 
+                  <button class="btn btn-success" ng-click="Role.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+                  <button class="btn btn-danger" ng-click="Role.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+                <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-role"> 
+                  <div class="form-group"> 
+                    <br> 
+                    <input type="text" ng-model="Role.active.name" class="form-control" id="textinput-id" placeholder="Name" required=""> 
+                    <br> 
+                    <label>Enabled?</label> 
+                    <input type="checkbox" ng-model="Role.active.enabled" ng-true-value="true"> 
+                  </div> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+              </form> 
+            </div> 
+          </div> 
+          <!-- Form --> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="tab1962"> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-312146"> 
+            <datasource name="UserRole" entity="/api/rest/security/UserRole" keys="id" rows-per-page="100" endpoint="api/rest" class=""></datasource> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-92529"> 
+            <div crn-datasource=""> 
+              <table class="table  table-bordered table-hover" crn-datasource="UserRole"> 
+                <thead> 
+                  <tr class="table-header"> 
+                    <th> 
+                      <div data-container="true" class="">
+                         User 
+                      </div></th> 
+                    <th> 
+                      <div data-container="true" class="">
+                         Role 
+                      </div></th> 
+                  </tr> 
+                </thead> 
+                <tbody> 
+                  <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.user.name}} 
+                      </div></td> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.role.name}} 
+                      </div></td> 
+                  </tr> 
+                </tbody> 
+              </table> 
+              <div class="table-footer-controls"> 
+                <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+              </div> 
+            </div> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <!-- Form --> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-7739849"> 
+            <div ng-show="vm.error" class="alert alert-danger">
+               {{vm.error}} 
+            </div> 
+            <div class="form" ng-hide="!UserRole.editing &amp;&amp; !UserRole.inserting"> 
+              <form crn-datasource="UserRole"> 
+                <div class="active-bar"> 
+                  <h2 style="text-align:right"> UserRole </h2> 
+                  <button class="btn btn-success" ng-click="UserRole.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+                  <button class="btn btn-danger" ng-click="UserRole.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+                <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-user-role"> 
+                  <div class="form-group"> 
+                    <label>User</label> 
+                    <select ng-model="UserRole.active.user" class="form-control" ng-options="opt as opt.name for opt in User.data track by opt.id"> </select> 
+                    <label>Role</label> 
+                    <select ng-model="UserRole.active.role" class="form-control" ng-options="opt as opt.name for opt in Role.data track by opt.id"> </select> 
+                  </div> 
+                </div> 
+                <div class="" data-container="true"> 
+                </div> 
+              </form> 
+            </div> 
+          </div> 
+          <!-- Form --> 
+        </div> 
+        <div role="tabpanel" class="tab-pane" id="tab3948"> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-314138"> 
+            <datasource name="Permission" entity="/api/rest/security/Permission" keys="id" rows-per-page="100" endpoint="api/rest" class=""></datasource> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-343383"> 
+            <div crn-datasource=""> 
+              <table class="table  table-bordered table-hover" crn-datasource="Permission"> 
+                <thead> 
+                  <tr class="table-header"> 
+                    <th> 
+                      <div data-container="true" class="">
+                         Path 
+                      </div></th> 
+                    <th> 
+                      <div data-container="true" class="">
+                         Verb 
+                      </div></th> 
+                    <th> 
+                      <div data-container="true" class="">
+                         Role 
+                      </div></th> 
+                  </tr> 
+                </thead> 
+                <tbody> 
+                  <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.path}} 
+                      </div></td> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.verb}} 
+                      </div></td> 
+                    <td> 
+                      <div data-container="true" class="">
+                         {{rowData.role.name}} 
+                      </div></td> 
+                  </tr> 
+                </tbody> 
+              </table> 
+              <div class="table-footer-controls"> 
+                <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+              </div> 
+            </div> 
+          </div> 
+          <div class="" data-container="true"></div> 
+          <!-- Form --> 
+          <form> 
+            <div class="form" ng-hide="!Permission.editing &amp;&amp; !Permission.inserting"> 
+              <div class="active-bar" style="text-align:right"> 
+                <h2> Permission </h2> 
+                <button class="btn btn-success" ng-click="Permission.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+                <button class="btn btn-danger" ng-click="Permission.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+              </div> 
+              <div data-container="true" class=""> 
+              </div> 
+              <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-role"> 
+                <div class="form-group"> 
+                  <label>Path (regex)</label> 
+                  <input type="text" ng-model="Permission.active.path" class="form-control" placeholder="Path" required=""> 
+                  <br> 
+                  <label>Exclude</label> 
+                  <br> 
+                  <input type="text" placeholder="regex" class="form-control" ng-required="required" ng-model="Permission.active.exclude"> 
+                  <br> 
+                  <label>Verb</label> 
+                  <select ng-required="required" class="form-control" ng-model="Permission.active.verb" ng-options="item.id as item.name for item in vm.verbs"> <option value="">Choose</option> </select> 
+                  <br> 
+                  <label>Priority [{{Permission.active.priority}}]</label> 
+                  <br> 
+                  <input type="range" min="0" max="100" ng-required="required" ng-model="Permission.active.priority"> 
+                  <br> 
+                  <br> 
+                  <label>Role</label> 
+                  <select ng-model="Permission.active.role" class="form-control" ng-options="opt as opt.name for opt in Role.data track by opt.id"> <option value="">Choose</option> </select> 
+                  <br> 
+                  <label>Enabled?</label> 
+                  <br> 
+                  <input type="checkbox" ng-required="required" ng-model="Permission.active.enabled"> 
+                </div> 
+              </div> 
+              <div class="" data-container="true"> 
+              </div> 
+            </div> 
+          </form> 
+          <!-- Form --> 
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+  <div class="" data-container="true"></div> 
+  <div ng-hide="vm.username" class="alert alert-danger"> 
+    <h1>Access Denied!</h1> 
+  </div> 
+  <!-- tabs --> 
+  <div ng-show="vm.username"> 
+    <div ng-show="vm.error" class="alert alert-danger">
+       {{vm.error}} 
+    </div> 
+    <div ng-show="vm.success" class="alert alert-success">
+       {{vm.success}} 
+    </div> 
+    <div class="" data-container="true"> 
+    </div> 
+    <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-171476"> 
+    </div> 
+    <div class="" data-container="true"> 
+    </div> 
+  </div> 
+  <!-- tabs --> 
+</div> 
+<!-- container -->

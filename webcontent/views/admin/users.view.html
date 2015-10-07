@@ -1,0 +1,116 @@
+<h3>Users</h3> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+  <datasource name="User" entity="api/rest/security/User" keys="id" rows-per-page="100" class="" delete-message="Tem certeza que deseja remover este usuário?"></datasource> 
+</div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-276971"><datasource name="AllRoles" entity="api/rest/security/Role" keys="id" rows-per-page="100" class=""></datasource></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="User.startInserting()" ng-hide="User.inserting || User.editing"><i class="fa fa-user"></i> <span class="">Add new user</span></button> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-852138"> 
+  <div crn-datasource="User" class="" ng-hide="User.editing || User.inserting"> 
+    <table class="table  table-bordered table-hover"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class="active"> 
+            <div data-container="true" class="">
+               Picture 
+            </div></th> 
+          <th class=""> 
+            <div data-container="true" class="">
+               Name 
+            </div></th> 
+          <th class=""> 
+            <div data-container="true" class="">
+               Login 
+            </div></th> 
+          <th> 
+            <div data-container="true" class="">
+               Actions 
+            </div></th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class="active"> 
+             
+            <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-image" id="crn-image-428333"> 
+              <img ng-src="{{rowData.picture || 'img/nophoto.png'}}" class="picture-profile" width="50" height="50"> 
+            </div> 
+            </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+               {{rowData.name}} 
+            </div></td> 
+          <td class=""> 
+            <div data-container="true" class="">
+               {{rowData.login}} 
+            </div></td> 
+          <td class=""> 
+            <div data-container="true" class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i><span class="">Edit</span></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i> <span>Remove</span></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+    </div> 
+  </div> 
+</div> 
+ 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-319115"> 
+  <div class="form" ng-show="User.editing || User.inserting"> 
+    <form crn-datasource="User" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+         
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-656503"> 
+          <datasource append="false" name="Roles" entity="api/rest/security/User/{{User.active.id}}/Roles" keys="id" rows-per-page="100" class="" lazy="true" auto-post="true" enabled="{{User.editing}}"></datasource> 
+        </div> 
+         
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-61057"> 
+          <div class="form-group"> 
+            <label for="exampleInputEmail1" class="">Name</label> 
+            <input type="text" ng-model="User.active.name" class="form-control" id="textinput-id" placeholder="Placeholder text"> 
+          </div> 
+        </div> 
+         
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-950960"> 
+          <div class="form-group"> 
+            <label for="exampleInputEmail1" class="">Login</label> 
+            <input type="text" ng-model="datasource.active.login" class="form-control" id="textinput-id" placeholder="Placeholder text"> 
+          </div> 
+        </div> 
+         
+        <div class="form-group"> 
+          <label for="" class="">Roles</label> 
+          <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle selected-holder" data-component="crn-tags" id="crn-tags-819676"> 
+            <ui-select multiple="" crn-datasource="AllRoles" ng-model="Roles.data" ng-disabled="User.inserting" class="crn-select" style="min-width: 200px" theme="bootstrap"> 
+              <ui-select-match placeholder="Select person..." class="">
+                {{$item.name}}
+              </ui-select-match> 
+              <ui-select-choices repeat="rowData in datasource.data | filter : $select.search" class=""> 
+                <div class="" data-container="true">
+                   {{rowData.name}} 
+                </div> 
+              </ui-select-choices> 
+            </ui-select> 
+          </div> 
+        </div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 

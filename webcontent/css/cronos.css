@@ -1,0 +1,350 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.table-footer-controls {
+  margin-top: -20px;
+}
+
+.zoom-button:hover{
+  -ms-transform: scale(1.2,1.2);
+  -webkit-transform: scale(1.2,1.2);
+  transform: scale(1.2,1.2);
+}
+
+.sidebar {
+  width: 260px; 
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  background-color: #FFF;
+  padding: 10px;
+  border-left: 1px solid #ccc;
+  z-index: 999;
+}
+
+/** login **/
+
+/*
+    Note: It is best to use a less version of this file ( see http://css2less.cc
+    For the media queries use @screen-sm-min instead of 768px.
+    For .omb_spanOr use @body-bg instead of white.
+*/
+
+@media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+}
+
+.omb_login .omb_authTitle {
+    text-align: center;
+  line-height: 300%;
+}
+  
+
+.omb_login .omb_loginOr {
+  position: relative;
+  font-size: 1.5em;
+  color: #aaa;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.omb_login .omb_loginOr .omb_spanOr {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: -0.6em;
+  margin-left: -1.5em;
+  background-color: white;
+  width: 3em;
+  text-align: center;
+}     
+
+.omb_login .omb_loginForm .input-group.i {
+  width: 2em;
+}
+
+
+  
+@media (min-width: 768px) {
+    .omb_login .omb_forgotPwd {
+        text-align: right;
+    margin-top:10px;
+  }   
+}
+
+/** home **/
+
+
+
+/** SIDEBAR MENU **/
+
+.nav-side-menu {
+    font-family: verdana;
+    font-size: 12px;
+    font-weight: 200;
+    position: fixed;
+    top: 0px;
+    width: 300px;
+    height: 100%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.nav-side-menu .brand {
+    line-height: 50px;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+.nav-side-menu .toggle-btn {
+  display: none;
+}
+.nav-side-menu ul,
+.nav-side-menu li {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  line-height: 35px;
+  cursor: pointer;
+  width: 100%;
+}
+.nav-side-menu ul :not(collapsed) .arrow:before,
+.nav-side-menu li :not(collapsed) .arrow:before {
+  font-family: FontAwesome;
+  content: "\f078";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+  float: right;
+}
+
+.nav-side-menu ul .sub-menu li.active,
+.nav-side-menu li .sub-menu li.active {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li.active a,
+.nav-side-menu li .sub-menu li.active a {
+  color: #d19b3d;
+}
+.nav-side-menu ul .sub-menu li, .nav-side-menu li .sub-menu li {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    line-height: 28px;
+    margin-left: 0px;
+    padding-left: 25px;
+}
+
+.nav-side-menu ul .sub-menu li:hover,
+.nav-side-menu li .sub-menu li:hover {
+  background-color:rgba(0, 0, 0, 0.4);
+}
+.nav-side-menu ul .sub-menu li:before,
+.nav-side-menu li .sub-menu li:before {
+  font-family: FontAwesome;
+  content: "\f105";
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+.nav-side-menu li {
+    padding-left: 0px;
+    float: none;
+    width: 100%;
+}
+
+.nav-side-menu li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+.nav-side-menu li a i {
+  padding-left: 10px;
+  width: 20px;
+  padding-right: 20px;
+}
+.nav-side-menu li:hover {
+  background-color:rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  transition: all 1s ease;
+}
+@media (max-width: 767px) {
+  .nav-side-menu {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .nav-side-menu .toggle-btn {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10 !important;
+    padding: 3px;
+    background-color: #ffffff;
+    color: #000;
+    width: 40px;
+    text-align: center;
+  }
+  .brand {
+    text-align: left !important;
+    font-size: 22px;
+    padding-left: 20px;
+    line-height: 50px !important;
+  }
+}
+@media (min-width: 767px) {
+  .nav-side-menu .menu-list .menu-content {
+    display: block;
+  }
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.brand .avatar {
+    position: relative;
+    display: inline-block;
+    margin: 16px;
+}
+
+.brand .info {
+    display: inline-block;
+    line-height: 16px;
+}
+
+.brand .avatar img {
+    width: 64px;
+    height: 64px;
+    max-width: 100px;
+    max-height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 3px solid rgba(255,255,255,0.5);
+}
+
+img.picture-profile {
+    width: 36px;
+    height: 36px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+div[data-component="crn-button"] {
+  margin-bottom: 10px;
+}
+
+.brand .info .info-links {
+    font-size: 12px;
+}
+/* END SIDEBAR */
+
+/** LOGIN SCREEN */
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.login-container {
+    margin-top: 20px;
+}
+
+.no-border, .no-borders {
+    border-color: transparent;
+    border-width: 0;
+}
+
+.no-border.form-control, .no-border.form-control:focus,.no-borders.form-control, .no-borders.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.login-header {
+  margin: 20px 5px;
+  text-align: center;
+}
+
+img.zoom-button {
+    width: 36px;
+}
+
+.omb_socialButtons {
+  margin: 10px 10px;
+}
+
+.login-full:before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block;
+    width: inherit;
+    border: inherit;
+    content: "";
+    width: 100%;
+    height: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+.sub-menu a {
+    display: inline-block !important;
+}
+
+.crn-select {
+  width: 100%;
+}
+
+
+   /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+        
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      .main-view {
+        margin-left: 310px;
+      }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }

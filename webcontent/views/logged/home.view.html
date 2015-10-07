@@ -1,0 +1,31 @@
+<div class="component-holder ng-binding ng-scope" data-component="crn-sidebar" id="crn-sidebar-751554"> 
+  <!-- Sidebar Menu --> 
+  <div class="nav-side-menu navbar-default"> 
+    <div class="brand"> 
+      <div class="avatar hidden-xs hidden-sm"> 
+        <img alt="" ng-src="{{vm.userpictureurl || 'img/nophoto.png'}}" class=""> 
+      </div> 
+      <div class="info"> 
+        <div class="name navbar-brand">
+           {{session.name}} 
+        </div> 
+         
+      </div> 
+    </div> 
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content1"></i> 
+    <div class="menu-list"> 
+      <ul id="menu-content1" class="menu-content collapse out navbar-nav"> 
+        <li data-toggle="collapse" data-target="#menu-sub-1" class="collapsed component-holder" data-component="crn-sidebar-item"> <a href="#/home" class=""><i class="fa fa-lg fa-home"></i> <span class="">Home</span> </a> </li> 
+        <li data-toggle="collapse" data-component="crn-sidebar-item" data-target="#menu-sub-5099" class="collapsed component-holder"><a href="javascript:void(0);" class=""><i class="fa fa-users fa-lg"></i> <span class="">Admin</span> <span class="arrow"></span></a> 
+          <ul class="sub-menu collapse" id="menu-sub-5099"> 
+            <li class=""><a href="#/home/admin/users" class="component-holder" data-component="crn-anchor">Users</a></li> 
+            <li><a href="#/home/admin/roles" class="component-holder" data-component="crn-anchor">Roles</a></li> 
+            <li><a href="#/home/admin/permission" class="component-holder" data-component="crn-anchor">Permission</a></li> 
+          </ul> </li> 
+        <li data-toggle="collapse" data-component="crn-sidebar-item" data-target="#menu-sub-9831" class="collapsed component-holder"><a href="#/home/logged/prestadoresservicos" class=""><i class="fa fa-lg fa-user"></i> <span class="">Prestadores de Serviços</span> </a> </li> 
+      <li data-toggle="collapse" data-component="crn-sidebar-item" data-target="#menu-sub-2787" class="collapsed component-holder selected-holder" ng-click="logout()"><a href="javascript:void(0);" class=""><i class="fa fa-lg fa-sign-out"></i> <span class="">Logout</span> </a>  </li> </ul> 
+    </div> 
+  </div> 
+  <div ui-view="" class="main-view"> 
+  </div> 
+</div>

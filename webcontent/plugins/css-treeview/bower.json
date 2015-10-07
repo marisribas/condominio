@@ -1,0 +1,21 @@
+{
+  "name": "css-treeview",
+  "version": "0.0.1",
+  "authors": [
+	"Fernando Santos <nanndoj@gmail.com> (http://nanndoj.com)",
+    "The CSS Ninja"
+  ],
+  "description": "Lightweight and pure CSS Treeview",
+  "keywords": [
+    "treeview",
+    "css",
+    "lightweight",
+    "pure",
+    "css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nanndoj/css-treeview.git"
+  },
+  "license": "MIT"
+}

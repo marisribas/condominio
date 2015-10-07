@@ -1,0 +1,196 @@
+<h3>PrestadoresServicos</h3>
+
+<div ng-hide="PrestadoresServicos.inserting || PrestadoresServicos.editing">
+  <label for="textinput-filter" class="">Filter </label> 
+  <input type="text" ng-model="query" class="form-control" value="%" placeholder="Placeholder text"> 
+</div>
+<br/>
+<div class="" data-container="true"></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-datasource" id="crn-datasource-763276"> 
+   <datasource filter="{{query === '' ? null : ('/list/' + query)}}" name="PrestadoresServicos" entity="/api/rest/uml/Servicos/PrestadoresServicos" keys="id" rows-per-page="100" class=""></datasource> 
+</div> 
+<div class="" data-container="true"></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-button" id="crn-button-564202"> 
+  <button class="btn btn-primary" type="submit" onclick="" ng-click="PrestadoresServicos.startInserting()" ng-hide="PrestadoresServicos.inserting || PrestadoresServicos.editing"><i class="fa fa-user"></i> <span class="">New</span></button> 
+</div> 
+<div class="" data-container="true"></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-grid" id="crn-grid-PrestadoresServicos"> 
+  <div crn-datasource="PrestadoresServicos" class="" ng-hide="PrestadoresServicos.editing || PrestadoresServicos.inserting"> 
+    <table class="table  table-bordered table-hover table-striped"> 
+      <thead> 
+        <tr class="table-header"> 
+          <th class=""> 
+            <div data-container="true" class="">servico</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">prestador</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">fone1</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">fone2</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">fone3</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">email</div>
+          </th> 
+          <th class=""> 
+            <div data-container="true" class="">obs</div>
+          </th> 
+          <th class=""> 
+          <div data-container="true" class="">Actions</div>
+          </th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <tr class="table-content" ng-repeat="rowData in datasource.data"> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.servico}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.prestador}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.fone1}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.fone2}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.fone3}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.email}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class="">
+
+			{{rowData.obs}}
+
+	    </div>
+          </td> 
+          <td class=""> 
+            <div data-container="true" class=""> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.startEditing(rowData)"><i class="fa fa-edit"></i></button> 
+              <button class="btn btn-default btn-sm" type="submit" ng-click="datasource.remove(rowData)"><i class="fa fa-times"></i></button> 
+            </div></td> 
+        </tr> 
+      </tbody> 
+    </table> 
+    <div class="table-footer-controls"> 
+      <button class="btn btn-default btn-block btn-clicked" ng-show="datasource.hasNextPage()" ng-click="datasource.nextPage()">Load more...</button> 
+    </div> 
+  </div> 
+</div> 
+<div class="" data-container="true"></div> 
+<div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-form" id="crn-form-form-PrestadoresServicos"> 
+  <div class="form" ng-show="PrestadoresServicos.editing || PrestadoresServicos.inserting"> 
+    <form crn-datasource="PrestadoresServicos" class=""> 
+      <div class="tool-bar" ng-hide="datasource.editing || datasource.inserting"> 
+        <button class="btn btn-primary" ng-click="datasource.startInserting()"><i class="glyphicon glyphicon-plus-sign"></i></button> 
+        <button class="btn btn-success" ng-click="datasource.startEditing()"><i class="glyphicon glyphicon-edit"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasPrevious()" ng-click="datasource.previous()"><i class="glyphicon glyphicon-chevron-left"></i></button> 
+        <button class="btn btn-primary" ng-disabled="!datasource.hasNext()" ng-click="datasource.next()"><i class="glyphicon glyphicon-chevron-right"></i></button> 
+        <button class="btn btn-primary" ng-click="datasource.remove()"><i class="glyphicon glyphicon-trash"></i></button> 
+      </div> 
+      <div class="active-bar" ng-hide="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <button class="btn btn-success" ng-click="datasource.post()"><i class="glyphicon glyphicon-ok"></i></button> 
+        <button class="btn btn-danger" ng-click="datasource.cancel()"><i class="glyphicon glyphicon-remove"></i></button> 
+      </div> 
+      <fieldset ng-disabled="!datasource.editing &amp;&amp; !datasource.inserting"> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-servico"> 
+          <div class="form-group"> 
+            <label for="textinput-servico" class="">servico</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.servico" class="form-control" id="textinput-servico" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-prestador"> 
+          <div class="form-group"> 
+            <label for="textinput-prestador" class="">prestador</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.prestador" class="form-control" id="textinput-prestador" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-fone1"> 
+          <div class="form-group"> 
+            <label for="textinput-fone1" class="">fone1</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.fone1" class="form-control" id="textinput-fone1" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-fone2"> 
+          <div class="form-group"> 
+            <label for="textinput-fone2" class="">fone2</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.fone2" class="form-control" id="textinput-fone2" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-fone3"> 
+          <div class="form-group"> 
+            <label for="textinput-fone3" class="">fone3</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.fone3" class="form-control" id="textinput-fone3" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-email"> 
+          <div class="form-group"> 
+            <label for="textinput-email" class="">email</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.email" class="form-control" id="textinput-email" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+        <div class="component-holder ng-binding ng-scope ui-draggable ui-draggable-handle" data-component="crn-textinput" id="crn-textinput-obs"> 
+          <div class="form-group"> 
+            <label for="textinput-obs" class="">obs</label> 
+
+        <input type="text" ng-model="PrestadoresServicos.active.obs" class="form-control" id="textinput-obs" placeholder="Placeholder text" > 
+
+          </div> 
+        </div> 
+        <div class="" data-container="true"></div> 
+      </fieldset> 
+    </form> 
+  </div> 
+</div> 
+<div class="" data-container="true"></div>
