@@ -1,6 +1,6 @@
 #WSO2
 
-Acesse o WSO2 como admin
+Acesse o WSO2 como admin teste
 
 https://localhost:9443
 
